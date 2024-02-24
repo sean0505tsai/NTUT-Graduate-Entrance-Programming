@@ -55,8 +55,7 @@ main()
 # s1 = 'b' + f7('c', 0) -> return 'b'
 # return sorted(['b']+ ['c'])
 
-# f7('c', 0)
-# return ['']
+# f7('c', 0) -> return ['']
 
 
 
