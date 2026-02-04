@@ -20,3 +20,27 @@ def countWord(sentence):
     data = {w:words.count(w) for w in set(words)}
     info = sorted(data.items(), key=lambda d:d[1])
     for i in info: print(i, end='')                 # problem 3-3
+
+def isOK(num:int)->bool:
+    if num <=0: return False
+    elif num ==1: return True
+    else: return isOK(num-2)
+
+def printNum(m:int, n:int):
+    mySum = 0
+    for i in range(m, n):
+        if isOK(i): mySum += i
+    print(mySum)                                    # problem 3-4
+
+def compute(n:int):
+    data = [[1,2 ,3],[4,5,6],[7,8,9]]
+    target = [[0,0,0],[0,0,0],[0,0,0]]
+    for row in range(3):
+        for col in range(3):
+            target[row][col]= data[row][col]
+    print(target[n][n], target[n+1][n-1])       # problem 3-5
+
+countSymbol()
+countWord("this is a book this is a book")
+printNum(5, 10)
+compute(1)
