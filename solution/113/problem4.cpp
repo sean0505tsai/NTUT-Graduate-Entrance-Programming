@@ -12,22 +12,45 @@ public:
         return "white";
     };
     virtual int getW() { return 0; }; // virtual function
-    virtual int getV()/*__________*/; // pure virtual function  /* Problem 4-1 */
+    virtual int getV() = 0;           // pure virtual function  /* Problem 4-1 */
 };
 class Cube : public Shape
 {
 private:
     int s; // side
 public:
-    Cube(string vl, int v2, int v3) : s(v3) { setC(vl); setW(v2); };
-    void setC(string v){ c = v; };
-    void setW(int v){ w = v; };
-    int getS(){ return s; };
-    string getC(){ return c; };
-    string getC(Cube *o){ return c + o->getC(); }; // function overloading
-    virtual int getW(){ return w; }; // virtual function
+    Cube(string vl, int v2, int v3) : s(v3)
+    {
+        setC(vl);
+        setW(v2);
+    };
+    void setC(string v)
+    {
+        c = v;
+    };
+    void setW(int v)
+    {
+        w = v;
+    };
+    int getS()
+    {
+        return s;
+    };
+    string getC()
+    {
+        return c;
+    };
+    string getC(Cube *o)
+    {
+        return c + o->getC();
+    }; // function overloading
+    virtual int getW()
+    {
+        return w;
+    }; // virtual function
     virtual int getV() { return s * s * s; };
-    Cube operator+(Cube /*________*/o){ // operator overloading /* Problem 4-2 */
+    Cube operator+(Cube &o)
+    { // operator overloading /* Problem 4-2 */
         return Cube(getC() + o.getC(), getW() + o.getW(), getS() + o.getS());
     }
 };
