@@ -19,5 +19,10 @@ def search(data, left, right, key):
 def f(x):
     print(search([1, 5, 9, 14, 23, 26], 0, 5, x))
 
+print("Output of f(5): ", end="")
 f(5)
-f(26)
+
+try:
+    f(26)
+except Exception as e:
+    print(f"Error: {type(e).__name__}: {e}")
