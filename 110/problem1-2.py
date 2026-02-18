@@ -5,7 +5,7 @@ def search(data, left, right, key):
     if left==right:
         return -1
     if data[mid] > key:
-        return search(data, left, mid, key)
+        return search(data, left, mid-1, key)
     else:
         return search(data, mid+1, right, key)
     
@@ -15,7 +15,7 @@ def f():
     my_dict[9]=search(data, 0, 5, 9)
     my_dict[1]=search(data, 0, 5, 1)
     my_dict[14]=search(data, 0, 5, 14)
-    print(my_dict)                      # (i)
-    print(data[1:5:2])                  # (ii)
+    print("1-5-i: ", my_dict)                      # (i)
+    print("1-5-ii: ", data[1:5:2])                  # (ii)
 
 f()

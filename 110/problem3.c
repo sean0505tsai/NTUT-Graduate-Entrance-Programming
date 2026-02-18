@@ -47,7 +47,7 @@ int f6(int x[3], int y[3][3]){
     return t;
 }
 
-char f7(char s1[], char s2[]){
+char* f7(char s1[], char s2[]){
     char s[20]="";
     strncat(s, s1, 4);
     strcat(s, s2);
@@ -60,12 +60,12 @@ int main(int argc, char *argv[]){
     int b[3] = {1, 2, 2};
     char s1[]="Hello", s2[]="World!";
 
-    printf("%d\n", f1(1, 2));               // Problem 3-1
-    printf("%3.1f\n", f2(5));               // Problem 3-2
-    printf("%d\n", f3());                   // Problem 3-3
-    printf("%d\n", f4(5));                  // Problem 3-4
-    printf("%d\n", f5("science"));         // Problem 3-5
-    printf("%d\n", f6(b, a));               // Problem 3-6
-    printf("%s\n", f7(s1, s2));            // Problem 3-7
+    printf("3-1: %d\n", f1(1, 2));               // Problem 3-1
+    printf("3-2: %3.1f\n", f2(5));               // Problem 3-2
+    printf("3-3: %d\n", f3());                   // Problem 3-3
+    printf("3-4: %d\n", f4(5));                  // Problem 3-4
+    printf("3-5: %d\n", f5("science"));         // Problem 3-5
+    printf("3-6: %d\n", f6(b, a));               // Problem 3-6
+    printf("3-7: %s\n", f7(s1, s2));            // Problem 3-7
     return 0;
 }
