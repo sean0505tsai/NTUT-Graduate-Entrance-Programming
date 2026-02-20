@@ -1,5 +1,7 @@
 # UML class of problem 6:
 
+![problem6](problem6.png)
+
 ## Pet
 ```
 ────────────────────────────────

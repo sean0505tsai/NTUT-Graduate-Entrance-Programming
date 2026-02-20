@@ -2,11 +2,11 @@ def op(data, x, y, n):
     sum = 0
     for i in range(x, x+n):
         for j in range(y, y+n):
-            sum = sum + data[i][j]      # 3-8
-    return sum//(n*n)            # 3-9
+            sum = sum + __________      #(Problem 3-8)
+    return sum//__________            # (Problem 3-9)
 
 def compress(data, m, n):
-    size = m//n                   # 3-10
+    size = __________                   # (Problem 3-10)
     target = []
     for x in range(size):
         row = []
@@ -14,6 +14,7 @@ def compress(data, m, n):
             row.append(op(data, x*n, y*n, n))
         target.append(row)
     return target
+
 data=[[1, 2, 3, 4, 5, 6,7],
     [8, 9,10,11,12,13,14],
     [15,16,17,18,19,20,21],
@@ -25,8 +26,18 @@ data=[[1, 2, 3, 4, 5, 6,7],
 print(compress(data, 4,2), '\n##')
 print(compress(data, 6,2), '\n##')
 print(compress(data, 6,3), '\n##')
+# (1+2+8+9)//4=5,
+# (3+4+10+11)//4=7,
+# (15+16+22+23)//4=19,
+# (17+18+24+25)//4=21,
+#...
+# (1+2+3+8+9+10+15+16+17)//9 = 9,
+# (4+5+6+11+12+13+18+19+20)//9 = 12,
+# (22+23+24+29+30+31+36+37+38)//9 = 30,
+# (25+26+27+32+33+34+39+40+41)//9 = 33,
 
 '''
+Suppose that the outputs are:
 [[5, 7], [19,21]]
 ##
 [[5,7,9],[19,21, 23], [33, 35, 37]]

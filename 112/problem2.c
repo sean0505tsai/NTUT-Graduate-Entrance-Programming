@@ -51,21 +51,12 @@ int main(){
     char s1[100] = "NTUT", s2[100] = "Good";
     int A[2][2] = {{1,2}, {2,1}}, B[2][2] = {{1,2}, {2,3}}, C[2][2], D[10];
     f1(s1, s2);
-    printf("%s\n", s1);             /* 2-1: NTUTGood */
-    printf("%d\n", f2());           /* 2-2: 0 */
+    printf("%s\n", s1);             /* Problem 2-1 */
+    printf("%d\n", f2());           /* Problem 2-2 */
     f3(A, B, C, 2);
-    printf("%d%d\n", C[0][0], C[1][1]);     /* 2-3: 57 */
-    printf("%d\n", f4(20));                 /* 2-4: 21 */
-    printf("%3.2f\n", f5(6, 6));            /* 2-5: 004.00 */
+    printf("%d%d\n", C[0][0], C[1][1]);     /* Problem 2-3 */
+    printf("%d\n", f4(20));                 /* Problem 2-4 */
+    printf("%3.2f\n", f5(6, 6));            /* Problem 2-5 */
     f6(D, 123);
-    printf("%d%d%d\n", D[1], D[2], D[3]);   /* 2-6: 000 */
+    printf("%d%d%d\n", D[1], D[2], D[3]);   /* Problem 2-6 */
 }
-
-/*
-NTUTGood
-0
-57
-21
-4.00'
-000
-*/
