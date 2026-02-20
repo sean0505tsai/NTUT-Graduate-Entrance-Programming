@@ -29,5 +29,17 @@ class Apple: public Fruit{
 };
 
 int main(){
-    
+    Apple apple;
+    apple.setCultivar("McIntosh", "green");
+    Fruit *p1 = new Apple();
+    Fruit *p2 = new Apple(apple);
+    Apple *p3 = new Apple();
+    p3->setColor("yellow");
+    p3->setCultivar("McIntosh");
+    p1->pringInfo();            /* Problem 4-8 */
+    p2->pringInfo();            /* Problem 4-9 */
+    p3->pringInfo();            /* Problem 4-10 */
+    p1->printData();            /* Problem 4-11 */
+    p2->printData();            /* Problem 4-12 */
+    p3->printData();            /* Problem 4-13 */
 }
