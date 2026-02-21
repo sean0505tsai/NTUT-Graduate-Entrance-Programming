@@ -13,8 +13,9 @@ public:
     RedTea() = default;
     RedTea(string name, int price, double content) : _name(name), _price(price), _content(content){}
     
-    virtual ~RedTea(){};         /* 5-1 */
-    virtual void dilute()= 0;      /* 5-1 */ /* 5-2 */
+    __________ ~RedTea(){};         /* 5-1 */
+    __________ void dilute()        /* 5-1 */
+                    = __________;      /* 5-2 */
     int get_price() const{
         return _price;
     }
@@ -43,7 +44,7 @@ class NewBloodyMary;
 static NewBloodyMary CreareNewBloodyMary(string name, int price, double content);
 
 class NewBloodyMary: public RedTea{
-    friend NewBloodyMary CreareNewBloodyMary(string name, int price, double content);    /* 5-3 */
+    __________ NewBloodyMary CreareNewBloodyMary(string name, int price, double content);    /* 5-3 */
 
 private:
     NewBloodyMary(string name, int price, double content):
@@ -58,13 +59,13 @@ public:
     static NewBloodyMary *CreareNewBloodyMaryPtr(string name, int price, double content){
         return new NewBloodyMary(name, price, content);
     }
-    NewBloodyMary & operator = (const NewBloodyMary &other){         /* 5-4 */
+    NewBloodyMary & operator = (const __________){         /* 5-4 */
         this->_name = other._name;
         this->_price = other._price;
         this->_content = other._content;
         return *this; 
     }
-    NewBloodyMary operator+(const NewBloodyMary &other){                                /* 5-4 */
+    NewBloodyMary operator+(const __________){                                /* 5-4 */
         return NewBloodyMary(this->_name, 
                 this->_price + other._price, (this->_content+other._content)/2);
     }
@@ -74,11 +75,11 @@ static NewBloodyMary CreareNewBloodyMary(string n, int p, double c){
 }
 class Order{
 private:
-    std::vector< RedTea* > vec;            /* 5-5 */
+    std::vector<__________> vec;            /* 5-5 */
 public:
     Order() = default;
     ~Order(){
-        for(int i = 0; i< vec.size(); i++){   /* 5-6 */
+        for(int i = 0; i<__________; i++){   /* 5-6 */
             delete vec[i];
         }
     }
@@ -88,7 +89,7 @@ public:
 
     int get_total_price(){
         int total = 0;
-        for(int i = 0; i< vec.size(); i++){
+        for(int i = 0; i< __________; i++){
             total += vec[i]->get_price();
         }
         return total;
@@ -102,14 +103,14 @@ int main(){
     order.append_alcohol(new LongIsland("B", 230, 0.7));
     vector<RedTea*> alcohol_vec = {
         new LongIsland("C", 77, 0.7),
-        NewBloodyMary::CreareNewBloodyMaryPtr("D", 88, 0.8),       /* 5-7 */
-        NewBloodyMary::CreareNewBloodyMaryPtr("E", 12, 0.8)        /* 5-7 */
+        __________CreareNewBloodyMaryPtr("D", 88, 0.8),       /* 5-7 */
+        __________CreareNewBloodyMaryPtr("E", 12, 0.8)        /* 5-7 */
         };
-    std::sort(alcohol_vec.begin(), alcohol_vec.end(), [](RedTea *a, RedTea *b){     /* 5-8 */
+    std::sort(alcohol_vec.begin(), alcohol_vec.end(), [](_________){     /* 5-8 */
         return a->get_price() < b->get_price();
         }
     );
-    NewBloodyMary H = CreareNewBloodyMary("F", 90, 0.8) + CreareNewBloodyMary("G", 10, 0.8);      /* 5-9 */
+    NewBloodyMary H = _____("F", 90, 0.8) + _____("G", 10, 0.8);      /* 5-9 */
     cout<< alcohol_vec.at(0)->get_price()<<endl;                    /* 5-10 */
     cout<< alcohol_vec.at(1)->get_price()<<endl;                    /* 5-11 */
     cout<<order.get_total_price()<<endl;                            /* 5-12 */
