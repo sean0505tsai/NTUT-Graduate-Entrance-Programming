@@ -130,14 +130,14 @@ printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 ## Problem 3
 
 - 3-1: `struct`
-- 3-2: 
-- 3-3:
-- 3-4:
-- 3-5:
-- 3-6:
-- 3-7:
-- 3-8:
-- 3-9:
+- 3-2: `%10`
+- 3-3: `sizeof(node_t)`
+- 3-4: `newNode`
+- 3-5: `x->coef + y->coef`
+- 3-6: `x = x->next`
+- 3-7: `y->coef`
+- 3-8: `root`
+- 3-9: `!=`
 
 ## Problem 4
 
