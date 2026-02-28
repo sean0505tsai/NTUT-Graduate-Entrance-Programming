@@ -8,6 +8,14 @@
     - [1-1](#1-1)
     - [1-2](#1-2)
   - [Problem 2](#problem-2)
+    - [2-1](#2-1)
+    - [2-2](#2-2)
+    - [2-3](#2-3)
+    - [2-4](#2-4)
+    - [2-5](#2-5)
+    - [2-6](#2-6)
+    - [2-7](#2-7)
+    - [2-8](#2-8)
   - [Problem 3](#problem-3)
   - [Problem 4](#problem-4)
   - [Problem 5](#problem-5)
@@ -19,6 +27,72 @@
 ### 1-2
 
 ## Problem 2
+
+### 2-1
+
+```c
+if('A' <= buf[i] && buf[i] <= 'Z')
+                  ^^^^^^^^^^^^^^^^
+```
+
+ASCII碼中，'A'是65，'Z'是90，所以可以用上述條件判斷buf[i]是否為大寫字母。
+
+### 2-2
+
+```c
+buf[i] = 'a' + buf[i] - 'A'
+                      ^^^^^^
+```
+
+'a'是97，'A'是65，所以buf[i] - 'A'會得到buf[i]在大寫字母中的位置，再加上'a'就會得到對應的小寫字母。
+
+### 2-3
+
+```c
+if(data[i] == c) total+=1;
+                 ^^^^^^
+```
+
+如果data[i]等於c，表示在data陣列中找到了c這個字元，所以total加1。
+
+### 2-4
+
+```c
+alpha_table[i] = alpha_count(buf, ('a'+ i));
+                                      ^^^
+```
+
+('a' + i)會得到對應的小寫字母，例如i=0時是'a'，i=1時是'b'，以此類推。alpha_count函式會計算buf陣列中該字母出現的次數，並將結果存入alpha_table陣列中對應的位置。
+
+### 2-5
+
+```c
+int index = specific_c - 'a';
+                      ^^^
+```
+
+`specific_c - 'a'` 會得到 `specific_c`在小寫字母中的位置，例如 `specific_c` 是 `'a'` 時，`index` 會是0；`specific_c` 是 `'b'` 時，`index` 會是1，以此類推。接著再從 `alpha_table` 陣列查詢對應位置(該字母)的值，就可以得到`specific_c` 在 `buf` 陣列中出現的次數。
+
+### 2-6
+
+```c
+printf("%d\n", alpha_count("book_is_good", 'o'));
+```
+
+- Output: 4
+
+`alpha_count("book_is_good", 'o')` 會計算字串 "book_is_good" 中 'o' 出現的次數。字串中 'o' 出現了4次，所以結果是4。
+
+### 2-7
+```c
+printf("%d, %d\n", comp("FO", "FOO"), comp("FO", "FO"));
+// Ans: 
+```
+
+### 2-8
+```c
+printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
+```
 
 ## Problem 3
 
