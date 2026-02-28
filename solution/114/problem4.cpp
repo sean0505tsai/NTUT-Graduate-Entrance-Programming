@@ -7,7 +7,7 @@ class Product{
     public:
         Product(int v): value(v){value+=10;}
         /* Problem 4-1: Fill in the code for a pure virtual function declaration */
-        ____________________;               // Problem 4-1
+        virtual int computeTax() = 0;               // 4-1: virtual int computeTax() = 0;
         int getValue(){return computeTax() + _____;};    // Problem 4-2
 };
 
