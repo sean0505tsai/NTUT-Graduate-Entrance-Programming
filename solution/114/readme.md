@@ -126,6 +126,7 @@ printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 - Ans: `1, 0`
 
 `FOOD` 與 `FOOAD` 前3個字元相同，但比較到第四個字元時，`D` 大於 `A`，所以 `*s > *d` 條件成立，return 1。
+`comp("", "")` 兩字串皆為空字串，所以 return 0。
 
 ## Problem 3
 
