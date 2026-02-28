@@ -14,8 +14,9 @@
     - [2-4](#2-4)
     - [2-5](#2-5)
     - [2-6](#2-6)
-    - [2-7](#2-7)
-    - [2-8](#2-8)
+    - [2-7 \& 2-8](#2-7--2-8)
+      - [2-7](#2-7)
+      - [2-8](#2-8)
   - [Problem 3](#problem-3)
   - [Problem 4](#problem-4)
   - [Problem 5](#problem-5)
@@ -35,7 +36,7 @@ if('A' <= buf[i] && buf[i] <= 'Z')
                   ^^^^^^^^^^^^^^^^
 ```
 
-ASCII碼中，'A'是65，'Z'是90，所以可以用上述條件判斷buf[i]是否為大寫字母。
+ASCII碼中，'A'是65，'Z'是90，所以如果buf[i]在65到90之間，就表示buf[i]是大寫字母。
 
 ### 2-2
 
@@ -79,17 +80,27 @@ int index = specific_c - 'a';
 printf("%d\n", alpha_count("book_is_good", 'o'));
 ```
 
-- Output: 4
+- Ans: 4
 
 `alpha_count("book_is_good", 'o')` 會計算字串 "book_is_good" 中 'o' 出現的次數。字串中 'o' 出現了4次，所以結果是4。
 
-### 2-7
+### 2-7 & 2-8
+
 ```c
-printf("%d, %d\n", comp("FO", "FOO"), comp("FO", "FO"));
-// Ans: 
+int comp(char* s, char* d){
+    if((*s=='\0')&&(*d=='\0')) return 0;      // 兩字元相等
+    else if ((*s=='\0')||(*s<*d)) return -1;  // s < d 或s為空字元
+    else if ((*d=='\0')||(*s>*d)) return 1;   // s > d 或d為空字元
+    else return comp(s+1,d+1);                // 繼續比較下一個字元
+}
 ```
 
-### 2-8
+#### 2-7
+```c
+printf("%d, %d\n", comp("FO", "FOO"), comp("FO", "FO")); 
+```
+
+#### 2-8
 ```c
 printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 ```
