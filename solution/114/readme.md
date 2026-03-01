@@ -142,4 +142,16 @@ printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 
 ## Problem 4
 
+- 4-1: `virtual int computeTax() = 0;`
+- 4-2: `computeTax() + value`
+- 4-3: `2`
+- 4-4: `10`
+- 4-5: `18`
+- 4-6: `objects`
+- 4-7: `computeTax()`
+- 4-8: `80`
+- 4-9: `18`
+- 4-10: `2`
+- 4-11: `120`
+
 ## Problem 5
