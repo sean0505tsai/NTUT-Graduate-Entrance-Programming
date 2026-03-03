@@ -155,3 +155,16 @@ printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 - 4-11: `120`
 
 ## Problem 5
+
+- 5-1: `static int`
+- 5-2: `const T&`
+- 5-3: `string name`
+- 5-4: `RName:R:d`
+- 5-5: `RArea:1`
+- 5-6: `SArea:9`
+- 5-7: `RArea:20`
+- 5-8: `sBoxes:2`
+- 5-9: `rBoxes:1`
+- 5-10: `C:S1`
+- 5-11: `R:R1`
+- 5-12: `E: Out of Index`

@@ -7,9 +7,9 @@ template<class T>
 class Box{
     private:
         T content;
-        __________ boxCount;              // Problem 5-1
+        static int boxCount;              // 5-1: static int boxCount;
     public:
-        Box(__________ c):content(c){boxCount++;}    // Problem 5-2
+        Box(const T& c):content(c){boxCount++;}    // 5-2: const T& c
         T getContent() const {return content;}
         static int getCount() {return boxCount;}
         ~Box(){boxCount--;}
@@ -19,7 +19,7 @@ template<class T>
 int Box<T>::boxCount = 0;              /* Static member initialization */
 class Shape{
     protected:
-        __________;                     // Problem 5-3
+        string name;                     // 5-3: string name
     public:
         Shape(string n): name(n){}
         virtual string getName() const = 0;
@@ -52,18 +52,18 @@ int main(){
         Box<Rectangle> rBox(Rectangle("R1", 4, 5));
         Rectangle rect;
 
-        cout<<"RName:"<<rect.getName()<<endl;           // Problem 5-4
-        cout<<"RArea:"<<rect.getArea()<<endl;           // Problem 5-5
-        cout<<"SArea:"<<sBox1.getContent().getArea()<<endl;   // Problem 5-6
-        cout<<"RArea:"<<rBox.getContent().getArea()<<endl;    // Problem 5-7
-        cout<<"sBoxes:"<<Box<Square>::getCount()<<endl;          // Problem 5-8
-        cout<<"rBoxes:"<<Box<Rectangle>::getCount()<<endl;       // Problem 5-9
+        cout<<"RName:"<<rect.getName()<<endl;           // 5-4: RName:R:d
+        cout<<"RArea:"<<rect.getArea()<<endl;           // 5-5: RArea:1
+        cout<<"SArea:"<<sBox1.getContent().getArea()<<endl;   // 5-6: SArea:9
+        cout<<"RArea:"<<rBox.getContent().getArea()<<endl;    // 5-7: RArea:20
+        cout<<"sBoxes:"<<Box<Square>::getCount()<<endl;          // 5-8: sBoxes:2
+        cout<<"rBoxes:"<<Box<Rectangle>::getCount()<<endl;       // 5-9: rBoxes:1
         Square square = sBox1.getContent();
         Rectangle rectangle = rBox.getContent();
         vector<Shape*> shapes = {&square, &rectangle};
-        for(auto shape: shapes) cout<<shape->getName()<<endl;    // Problem 5-10
+        for(auto shape: shapes) cout<<shape->getName()<<endl;    // 5-10: C:S1 R:R1
         cout<<shapes.at(2)->getName()<<endl;
     }catch(const exception& e){
-        cout<<"E: "<<"Out of Index"<<endl;                      // Problem 5-11
+        cout<<"E: "<<"Out of Index"<<endl;                      // 5-11: E: Out of Index
     }
 }
