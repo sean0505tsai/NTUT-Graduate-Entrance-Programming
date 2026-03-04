@@ -14,26 +14,26 @@ def decimal_to_base(num: int, base: int, ans=''):
     if num==0: return encoding[0]
     indices = []
     while num>0:
-        x = num __________ base                 # problem 1-10
+        x = num % base                 # 1-10: %
         indices.insert(0, x)                    # insert at position 0
-        num = num __________ base                 # problem 1-11
+        num = num // base                 # 1-11: //
     for i in indices:
         ans += encoding[i]
-        return ans
+    return ans
     
 def printNum(start: int, stop:int, cnt=0):
     for i in range(start, stop):
         encode = decimal_to_base(i, 16)
         if isDuplicate(encode, 4)==True:
-            cnt += __________                   # problem 1-12
+            cnt += 2                   # 1-12: 2
     return cnt
 
 # The elements of data cannot be duplicated, and the length must be equal to n.
 def isDuplicate(data: str, n: int):
-    if len(data) != n: return ___________       # problem 1-13
+    if len(data) != n: return False       # 1-13: False
     for d in data:
         if data.count(d)>1: return False
-    return __________                           # problem 1-14
+    return True                           # 1-14: True
 
 print(matchAB('AB10', '1B0A'), matchAB('9B1F', '1B0A'), end=', ')   # output: 1A3B 1A1B
 print(matchAB('123F', '567D'), matchAB('B10', '1B0A'), end=', ')    # output: 0A0B -1A-1B
