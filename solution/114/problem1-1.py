@@ -24,7 +24,7 @@ def getDict(ns, ss, name_p='', students={}):
         if value>=60: name_p += key
     return name_p
 
-cnt, data, x = 3, [7, 6, 5, 4, 3]
+cnt, data, x = 3, '', [7, 6, 5, 4, 3]
 names, scores = ['O', 'M', 'K', 'J'], [90, 55, 100, 50]
 print(getData(x, key=lambda k:(k[1], k[3])))                # problem 1-1
 print(getNum(20, 10)+getNum(15, 5))                         # problem 1-2
