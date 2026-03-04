@@ -19,7 +19,7 @@ def decimal_to_base(num: int, base: int, ans=''):
         num = num __________ base                 # problem 1-11
     for i in indices:
         ans += encoding[i]
-        return ans
+    return ans
     
 def printNum(start: int, stop:int, cnt=0):
     for i in range(start, stop):
