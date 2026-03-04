@@ -26,14 +26,14 @@ def getDict(ns, ss, name_p='', students={}):
 
 cnt, data, x = 3, '', [7, 6, 5, 4, 3]
 names, scores = ['O', 'M', 'K', 'J'], [90, 55, 100, 50]
-print(getData(x, key=lambda k:(k[1], k[3])))                # problem 1-1
-print(getNum(20, 10)+getNum(15, 5))                         # problem 1-2
+print(getData(x, key=lambda k:(k[1], k[3])))                # 1-1: 10
+print(getNum(20, 10)+getNum(15, 5))                         # 1-2: 40
 for i in range(10):
     if getIndex(6, i):cnt+=1
-print(cnt)                                                   # problem 1-3
+print(cnt)                                                   # 1-3: 5
 for index in range(10):
     subset = getSubset('csie', index)
     if len(subset)==3:data += subset
-print(data)                                                  # problem 1-4
-print(getDict(names, scores))                                # problem 1-5
-print(getIndex(5, 5))                                        # problem 1-6
+print(data)                                                  # 1-4: csi
+print(getDict(names, scores))                                # 1-5: OK
+print(getIndex(5, 5))                                        # 1-6: False

@@ -35,9 +35,9 @@ def isDuplicate(data: str, n: int):
         if data.count(d)>1: return False
     return __________                           # problem 1-14
 
-print(matchAB('AB10', '1B0A'), matchAB('9B1F', '1B0A'), end=', ')
-print(matchAB('123F', '567D'), matchAB('B10', '1B0A'), end=', ')
-print(isDuplicate('AA10', 4), isDuplicate('A10F', 4), end=', ')
-print(isDuplicate('AA0F', 5), decimal_to_base(1236, 9), end=', ')
-print(decimal_to_base(4131, 16), decimal_to_base(0, 16), end=', ')
-print(printNum(4124, 4138))
+print(matchAB('AB10', '1B0A'), matchAB('9B1F', '1B0A'), end=', ')   # output: 1A3B 1A1B
+print(matchAB('123F', '567D'), matchAB('B10', '1B0A'), end=', ')    # output: 0A0B -1A-1B
+print(isDuplicate('AA10', 4), isDuplicate('A10F', 4), end=', ')     # output: False True
+print(isDuplicate('AA0F', 5), decimal_to_base(1236, 9), end=', ')   # output: False 1623
+print(decimal_to_base(4131, 16), decimal_to_base(0, 16), end=', ')  # output: 1023 0
+print(printNum(4124, 4138))     # output: 14
