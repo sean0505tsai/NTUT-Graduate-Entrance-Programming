@@ -127,6 +127,7 @@ int comp(char* s, char* d){
 ```c
 printf("%d, %d\n", comp("FO", "FOO"), comp("FO", "FO")); 
 ```
+
 - Ans: `-1, 0`  
 
 `FO` 與 `FOO` 比較時前兩個字元相同，但比較到第三個字元時，`FO` 已經結束了（空字元），所以 `*s == '\0'` 條件成立，return -1。  

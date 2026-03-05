@@ -47,20 +47,10 @@ int f5() {
 }
 
 int main() {
-    // Problem 2-1
-    printf("%3.2f\n", f1(2, 3)); 
-
-    // Problem 2-2
-    printf("%d\n", f2()); 
-
-    // Problem 2-3
-    printf("%d\n", f3(3, 4)); 
-
-    // Problem 2-4
-    printf("%d\n", f4()); 
-
-    // Problem 2-5
-    printf("%d\n", f5()); 
-
+    printf("%3.2f\n", f1(2, 3));    // 2-1: 2.50
+    printf("%d\n", f2());           // 2-2: 4
+    printf("%d\n", f3(3, 4));       // 2-3: 48
+    printf("%d\n", f4());           // 2-4: 15
+    printf("%d\n", f5());           // 2-5: 16
     return 0;
 }
