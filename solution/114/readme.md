@@ -165,7 +165,7 @@ printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 - 4-4: `10`
 - 4-5: `18`
 - 4-6: `objects`
-- 4-7: `computeTax()`
+- 4-7: `->computeTax()`
 - 4-8: `80`
 - 4-9: `18`
 - 4-10: `2`
