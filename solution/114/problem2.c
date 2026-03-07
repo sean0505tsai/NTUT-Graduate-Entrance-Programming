@@ -52,7 +52,7 @@ int main(void){
     printf("%d\n", get_num_alpha_table(alpha_table, 't'));  // Output: 2
     printf("%d\n", get_num_alpha_table(alpha_table, 'n'));  // Output: 1
     printf("%d\n", get_num_alpha_table(alpha_table, 'c'));  // Output: 1
-    printf("%d\n", alpha_count("book_is_good", 'o'));       /* Problem 2-6: 4 */
-    printf("%d, %d\n", comp("FO", "FOO"), comp("FO", "FO"));  /* Problem 2-7 */
-    printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));  /* Problem 2-8 */
+    printf("%d\n", alpha_count("book_is_good", 'o'));       /* 2-6: 4 */
+    printf("%d, %d\n", comp("FO", "FOO"), comp("FO", "FO"));  /* 2-7: -1, 0 */
+    printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));  /* 2-8: 1, 0 */
 }
