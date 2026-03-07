@@ -182,6 +182,9 @@ printf("%d, %d\n", comp("FOOD", "FOOAD"), comp("", ""));
 - 5-7: `RArea:20`
 - 5-8: `sBoxes:2`
 - 5-9: `rBoxes:1`
-- 5-10: `C:S1`
-- 5-11: `R:R1`
-- 5-12: `E: Out of Index`
+- 5-10:
+  ```
+  C:S1
+  R:R1
+  ```
+- 5-11: `E: Out of Index`
