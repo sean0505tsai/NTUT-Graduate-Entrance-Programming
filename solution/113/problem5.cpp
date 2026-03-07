@@ -40,20 +40,20 @@ public:
         this->SetRentPrice(bicycle.GetRentPrice());
         return *this;
     }
-    int GetChargeFee() {return battery * __________;}       // Problem 5-1
+    int GetChargeFee() {return battery * 5;}       // 5-1: 5
     int Rent(int hour) override{ 
-        return GetRentPrice() * hour + __________; }        // Problem 5-2
+        return GetRentPrice() * hour + GetChargeFee() - battery * hour; }        // 5-2: GetChargeFee() - battery * hour
 };
 class ParkingSystem{
 private:
-    vector<Vehicle*> __________;                     // Problem 5-3
+    vector<Vehicle*> vehicles;                     // 5-3: vehicles
 public:
     ParkingSystem(vector<Vehicle*> &vehicles){this->vehicles = vehicles; }
     ~ParkingSystem() {};
-    int ____________________{                       // Problem 5-4
+    int GetTotalRentPrice(int hour){                       // 5-4: GetTotalRentPrice(int hour)
         int total = 0;
         for(int i=0; i<vehicles.size(); i++){
-            total += vehicles[i]__________;;               // Problem 5-5
+            total += vehicles[i]->Rent(hour);               // 5-5: ->Rent(hour)
         }
         return total;
     }
@@ -63,8 +63,8 @@ void test01(){
     UBicycle* uBil = new UBicycle(5);
     vector<Vehicle*> vehicles = {eBil, uBil};
     ParkingSystem parkingSystem(vehicles);
-    cout<<parkingSystem.GetTotalRentPrice(5)<<", ";
-    cout<<parkingSystem.GetTotalRentPrice(10)<<endl;
+    cout<<parkingSystem.GetTotalRentPrice(5)<<", ";     // output: 100
+    cout<<parkingSystem.GetTotalRentPrice(10)<<endl;    // output: 175
     delete eBil, uBil;
 }
 void test02(){
@@ -73,9 +73,9 @@ void test02(){
     UBicycle  uBil2 = *uBil;
     vector<Vehicle*> vehicles = {eBil, uBil, &uBil2};
     ParkingSystem parkingSystem(vehicles);
-    cout << parkingSystem.GetTotalRentPrice(5) << endl;  // Problem 5-6
-    try { UBicycle uBil2 = new UBicycle(-5); }
-    catch (string e) { cout<<e<<endl; }                 // Problem 5-7
+    cout << parkingSystem.GetTotalRentPrice(5) << endl;  // 5-6: 175
+    try { UBicycle* uBil2 = new UBicycle(-5); }
+    catch (string e) { cout<<e<<endl; }                 // 5-7: not be negative
     delete eBil, uBil;
 }
 void test03(){

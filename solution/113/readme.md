@@ -44,3 +44,10 @@
 
 ## Problem 5
 
+- 5-1: `5`
+- 5-2: `GetChargeFee() - battery * hour`
+- 5-3: `vehicles`
+- 5-4: `GetTotalRentPrice`
+- 5-5: `->Rent(hour)`
+- 5-6: 175
+- 5-7: `not be negative`
